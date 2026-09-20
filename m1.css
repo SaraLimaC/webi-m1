@@ -4,10 +4,8 @@
     box-sizing: border-box;
 }
 .main-content {
-    flex: 3;
     background: #f4f4f4;
     padding: 20px;
-    border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 header {
@@ -22,21 +20,32 @@ button {
     padding: 10px 20px;
     
         }
-#red {
-    background-color: red;
+
+.botones{
+    display:inline;
+        }
+
+button:hover{
+    background-color:white;
+}
+#red:hover{
+         background-color: red;
     }
 
-#blue {
-    background-color: blue; 
-    
+#blue:hover{
+         background-color: blue;
     }
 
-#green {
+#green:hover {
     background-color: green;
-   
     }
+
   
-    
+article {
+    display: inline-block;
+
+}
+
 div {
     display: flex;
     padding: 10px 20px;

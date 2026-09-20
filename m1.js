@@ -26,3 +26,21 @@ document.addEventListener("keydown", function(event) {
         document.body.classList.toggle("dark-mode");
     }
 });
+
+document.getElementById("small").onclick = pequeño;
+
+function pequeño(){
+    texto.style.fontSize = "small";
+}
+
+document.getElementById("large").onclick = grande;
+
+function grande(){
+    texto.style.fontSize = "large";
+}
+document.getElementById("medium").onclick = mediano;
+
+function mediano(){
+    texto.style.fontSize = "medium";
+}
+
