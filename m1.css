@@ -18,10 +18,24 @@ header {
     text-align: center;
         }
 
-.boton {
-    background-color: #6da9da;
+button {
     padding: 10px 20px;
+    
+        }
+#red {
+    background-color: red;
     }
+
+#blue {
+    background-color: blue; 
+    
+    }
+
+#green {
+    background-color: green;
+   
+    }
+  
     
 div {
     display: flex;
@@ -41,3 +55,5 @@ label {
     color: #3a719e;
     
 }
+
+

@@ -1,22 +1,22 @@
 
 let texto = document.getElementById("texto");
-document.getElementsByClassName("red").addEventListener("click", rojo() );
+document.getElementById("red").onclick = rojo;
 
 function rojo(){
     texto.style.color = "red";
 
 }
 
-document.getElementsByClassName("blue").addEventListener("click", blue() );
+document.getElementById("blue").onclick = azul;
 
-function blue(){
+function azul(){
     texto.style.color = "blue";
 
 }
 
-document.getElementsByClassName("green").addEventListener("click", green() );
+document.getElementById("green").onclick = verde;
 
-function green(){
+function verde(){
     texto.style.color = "green";
 
 }
