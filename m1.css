@@ -19,14 +19,25 @@ header {
         }
 
 .boton {
-    background-color: #6da9da
-      
-        }
-div {display: flex;}
+    background-color: #6da9da;
+    padding: 10px 20px;
+    }
+    
+div {
+    display: flex;
+    padding: 10px 20px;
+}
 
 p {
     font-size: 20px;
     color: #3a719e;
     text-align: center;
     margin-top: 20px;
+    
+}
+
+label {
+    font-size: 18px;
+    color: #3a719e;
+    
 }
