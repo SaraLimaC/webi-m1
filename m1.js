@@ -20,3 +20,9 @@ function verde(){
     texto.style.color = "green";
 
 }
+
+document.addEventListener("keydown", function(event) {
+    if (event.key === "d") {
+        document.body.classList.toggle("dark-mode");
+    }
+});
