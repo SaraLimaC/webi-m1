@@ -2,6 +2,12 @@
 let texto = document.getElementById("texto");
 document.getElementById("red").onclick = rojo;
 
+document.getElementById("black").onclick = negro;
+
+function negro(){
+    texto.style.color= "black";
+}
+
 function rojo(){
     texto.style.color = "red";
 

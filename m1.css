@@ -28,6 +28,11 @@ button {
 button:hover{
     background-color:white;
 }
+
+#black:hover{
+    background-color:black;
+    font-color: white;
+    }
 #red:hover{
          background-color: red;
     }
