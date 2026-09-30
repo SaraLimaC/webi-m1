@@ -1,3 +1,20 @@
+let frases = [
+    "Hola mundo",
+    "Buenos días",
+    "Sigue adelante",
+    "Todo es posible",
+    "Buen trabajo",
+    "Nunca pares",
+    "Día increíble",
+    "Crea algo",
+    "Mente creativa",
+    "Paso a paso",
+    "Vamos allá",
+    "Modo creativo",
+    "Piensa diferente",
+    "Disfruta aprendiendo",
+    "Lo conseguirás"
+];
 
 let texto = document.getElementById("texto");
 
@@ -33,28 +50,29 @@ function cambiarColor(color){
 
 
 document.addEventListener("keydown", function(event) {
-    if (event.key === "d") {
+    if (event.key === "d" && document.activeElement !== texto) {
         document.body.classList.toggle("dark-mode");
     }
+    
 });
 
+
 document.getElementById("small").onclick = pequeño;
-
-function pequeño(){
-    texto.style.fontSize = "small";
-}
-
 document.getElementById("large").onclick = grande;
-
-function grande(){
-    texto.style.fontSize = "large";
-}
 document.getElementById("medium").onclick = mediano;
 
+function pequeño(){
+    tamano("small");
+}
+function grande(){
+    tamano ("large");
+}
 function mediano(){
-    texto.style.fontSize = "medium";
+   tamano ("medium");
 }
 
-function tamano(){
-    texto.style.fontSize = tamano:
+let tamano;
+
+function tamano(tamano){
+    texto.style.fontSize = tamano;
 }
