@@ -96,7 +96,35 @@ function tamano(tamano){
     texto.style.fontSize = tamano;
 }
 
-document.getElementById("iniciarFrase").onclick = generaPalabra;
+document.getElementById("iniciar").onclick = inicio;
+
+let tiempo = document.getElementById("tiempo");
+let puntuacion = document.getElementById("puntos");
+
+let punt;
+let t;
+
+function inicio(){
+    punt=0;
+    t=30;
+
+    puntuacion.textContent = punt;
+    tiempo.textContent = t;
+
+    texto.value= "";
+
+    generarPalabra();
+
+    let intervalo = setInterval(() => {
+        t--;
+        tiempo.textContent = t;
+
+        if(t ==0){
+            clearInterval(intervalo);
+        }
+    },1000);
+}
+
 
 let coloresArray =[
     "red",
@@ -124,11 +152,10 @@ function generaPalabra(){
     
 }
 
-let puntuacion;
 texto.addEventListener("input", function() {
-    if (frases.includes(texto.value)) {
-        puntuacion++;
-        console.log("Frase encontrada");
+    if (frases.includes(texto.value) && frase.style.color==texto.style.color && frase.style.fontSize==texto.style.fontSize ) {
+        p++;
+        puntuacion.textContent= punt;
 
         texto.value = "";
         generaPalabra();
