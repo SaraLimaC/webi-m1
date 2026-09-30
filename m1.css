@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 .main-content {
-    background: #f4f4f4;
+    
     padding: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -73,4 +73,9 @@ label {
 .dark-mode {
     background-color: #222;
     color: white;
+}
+
+#frase{
+    text-align: center;
+    margin-left: 30px;
 }

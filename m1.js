@@ -106,7 +106,9 @@ let t;
 
 function inicio(){
     punt=0;
-    t=30;
+    t=50;
+
+    texto.disabled = false;
 
     puntuacion.textContent = punt;
     tiempo.textContent = t;
@@ -121,6 +123,9 @@ function inicio(){
 
         if(t ==0){
             clearInterval(intervalo);
+            texto.disabled = true;
+
+            alert("Puntuación final: " + punt);
         }
     },1000);
 }
@@ -152,7 +157,7 @@ function generaPalabra(){
 }
 
 texto.addEventListener("input", function() {
-    if (frases.includes(texto.value) && frase.style.color==texto.style.color && frase.style.fontSize==texto.style.fontSize ) {
+    if (texto.value.trim() === frase.textContent && frase.style.color==texto.style.color && frase.style.fontSize==texto.style.fontSize ) {
         punt++;
         puntuacion.textContent= punt;
 
