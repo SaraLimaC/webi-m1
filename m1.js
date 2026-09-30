@@ -46,7 +46,7 @@ document.getElementById("green").onclick= verde;
 
 
 function negro(){
-    cambiarColor("negro");
+    cambiarColor("black");
 }
 
 function rojo(){
@@ -114,12 +114,13 @@ let tamanoArray= [
 
 function generaPalabra(){
     let rand = Math.floor(Math.random() * frases.length);
-    frase = frases[rand];
+    frase.textContent = frases[rand];
+
     let colorRand = Math.floor(Math.random()*coloresArray.length);
     let tamanoRand = Math.floor(Math.random()*tamanoArray.length);
     frase.style.color= coloresArray[colorRand];
-    frase.style.fontSize= tamanoArray(tamanoRand);
-    frase.textContent;
+    frase.style.fontSize= tamanoArray[tamanoRand];
+    
     
 }
 
@@ -128,5 +129,8 @@ texto.addEventListener("input", function() {
     if (frases.includes(texto.value)) {
         puntuacion++;
         console.log("Frase encontrada");
+
+        texto.value = "";
+        generaPalabra();
     }
 });
