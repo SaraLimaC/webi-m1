@@ -65,12 +65,13 @@ function verde(){
 
 function cambiarColor(color){
    texto.style.color = color;
+   checkear()
     
 }
 
 
 document.addEventListener("keydown", function(event) {
-    if (event.key === "d" /*&& document.activeElement !== texto*/) {
+    if (event.key === "d" && document.activeElement !== texto) {
         document.body.classList.toggle("dark-mode");
     }
     
@@ -88,12 +89,13 @@ function grande(){
     tamano ("32px");
 }
 function mediano(){
-   tamano ("24spx");
+   tamano ("24px");
 }
 
 
 function tamano(tamano){
     texto.style.fontSize = tamano;
+    checkear()
 }
 
 document.getElementById("iniciar").onclick = inicio;
@@ -156,7 +158,9 @@ function generaPalabra(){
     
 }
 
-texto.addEventListener("input", function() {
+texto.addEventListener("input", checkear());
+
+function checkear(){
     if (texto.value.trim() === frase.textContent && frase.style.color==texto.style.color && frase.style.fontSize==texto.style.fontSize ) {
         punt++;
         puntuacion.textContent= punt;
@@ -164,4 +168,4 @@ texto.addEventListener("input", function() {
         texto.value = "";
         generaPalabra();
     }
-});
+}
