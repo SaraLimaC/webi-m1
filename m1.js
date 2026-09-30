@@ -96,11 +96,31 @@ function tamano(tamano){
     texto.style.fontSize = tamano;
 }
 
-document.getElementById("frase").onclick = generaPalabra;
+document.getElementById("iniciarFrase").onclick = generaPalabra;
+
+let coloresArray =[
+    "red",
+    "black",
+    "green",
+    "blue"
+
+]
+
+let tamanoArray= [
+    "small",
+    "medium",
+    "large"
+]
 
 function generaPalabra(){
     let rand = Math.floor(Math.random() * frases.length);
-    frase.textContent = frases[rand];
+    frase = frases[rand];
+    let colorRand = Math.floor(Math.random()*coloresArray.length);
+    let tamanoRand = Math.floor(Math.random()*tamanoArray.length);
+    frase.style.color= coloresArray[colorRand];
+    frase.style.fontSize= tamanoArray(tamanoRand);
+    frase.textContent;
+    
 }
 
 let puntuacion;
