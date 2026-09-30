@@ -99,13 +99,14 @@ function tamano(tamano){
 document.getElementById("frase").onclick = generaPalabra;
 
 function generaPalabra(){
-    rand = Math.round(Math.random() * frases.length); 
-    frase = frases[rand];
+    let rand = Math.floor(Math.random() * frases.length);
+    frase.textContent = frases[rand];
 }
 
+let puntuacion;
 texto.addEventListener("input", function() {
-    for (let i = 0; i < frases.length; i++) {
-        texto.value== frase[i];
+    if (frases.includes(texto.value)) {
+        puntuacion++;
+        console.log("Frase encontrada");
     }
-    
 });
