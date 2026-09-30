@@ -1,31 +1,36 @@
 
 let texto = document.getElementById("texto");
+
 document.getElementById("red").onclick = rojo;
-
-document.getElementById("black").onclick = negro;
-
-function negro(){
-    texto.style.color= "black";
-}
-
-function rojo(){
-    texto.style.color = "red";
-
-}
 
 document.getElementById("blue").onclick = azul;
 
-function azul(){
-    texto.style.color = "blue";
+document.getElementById("black").onclick = negro;
 
+document.getElementById("green").onclick= verde;
+function negro(){
+    cambiarColor("negro");
 }
 
-document.getElementById("green").onclick = verde;
+function rojo(){
+   cambiarColor("red");
+}
+
+function azul(){
+    cambiarColor("blue");
+}
 
 function verde(){
-    texto.style.color = "green";
+    cambiarColor("green");
 
 }
+let color;
+
+function cambiarColor(color){
+   texto.style.color = color;
+    
+}
+
 
 document.addEventListener("keydown", function(event) {
     if (event.key === "d") {
@@ -50,3 +55,6 @@ function mediano(){
     texto.style.fontSize = "medium";
 }
 
+function tamano(){
+    texto.style.fontSize = tamano:
+}
