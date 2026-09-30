@@ -46,19 +46,19 @@ document.getElementById("green").onclick= verde;
 
 
 function negro(){
-    cambiarColor("black");
+    cambiarColor("rgb(0, 0, 0)");
 }
 
 function rojo(){
-   cambiarColor("red");
+   cambiarColor("rgb(255, 0, 0)");
 }
 
 function azul(){
-    cambiarColor("blue");
+    cambiarColor("rgb(0, 0, 255)");
 }
 
 function verde(){
-    cambiarColor("green");
+    cambiarColor("rgb(0, 128, 0)");
 
 }
 
@@ -82,13 +82,13 @@ document.getElementById("large").onclick = grande;
 document.getElementById("medium").onclick = mediano;
 
 function pequeño(){
-    tamano("small");
+    tamano("16px");
 }
 function grande(){
-    tamano ("large");
+    tamano ("32px");
 }
 function mediano(){
-   tamano ("medium");
+   tamano ("24spx");
 }
 
 
@@ -113,7 +113,7 @@ function inicio(){
 
     texto.value= "";
 
-    generarPalabra();
+    generaPalabra();
 
     let intervalo = setInterval(() => {
         t--;
@@ -126,19 +126,18 @@ function inicio(){
 }
 
 
-let coloresArray =[
-    "red",
-    "black",
-    "green",
-    "blue"
+let coloresArray = [
+    "rgb(255, 0, 0)",   
+    "rgb(0, 0, 0)",     
+    "rgb(0, 128, 0)",   
+    "rgb(0, 0, 255)"    
+];
 
-]
-
-let tamanoArray= [
-    "small",
-    "medium",
-    "large"
-]
+let tamanoArray = [
+    "16px",
+    "24px",
+    "32px"
+];
 
 function generaPalabra(){
     let rand = Math.floor(Math.random() * frases.length);
@@ -154,7 +153,7 @@ function generaPalabra(){
 
 texto.addEventListener("input", function() {
     if (frases.includes(texto.value) && frase.style.color==texto.style.color && frase.style.fontSize==texto.style.fontSize ) {
-        p++;
+        punt++;
         puntuacion.textContent= punt;
 
         texto.value = "";
