@@ -103,12 +103,10 @@ document.getElementById("iniciar").onclick = inicio;
 let tiempo = document.getElementById("tiempo");
 let puntuacion = document.getElementById("puntos");
 
-const punt;
-const t;
+const punt = 0;
+const t = 50;
 
 function inicio(){
-    punt=0;
-    t=50;
 
     texto.disabled = false;
 
@@ -133,7 +131,7 @@ function inicio(){
 }
 
 
-´const coloresArray = [
+const coloresArray = [
     "rgb(255, 0, 0)",   
     "rgb(0, 0, 0)",     
     "rgb(0, 128, 0)",   

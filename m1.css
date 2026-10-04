@@ -54,7 +54,7 @@ article {
     display: inline-block;
 }
 
-div {
+ #divisores {
     display: flex;
     padding: 10px 20px;
 }
@@ -70,8 +70,14 @@ p {
     color: white;
 }
 
+.dark-mode p,
+.dark-mode h2,
+.dark-mode h3 {
+    color: white;
+}
+
 #frase {
     text-align: center;
     margin-left: 30px;
 }
-```
+
