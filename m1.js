@@ -46,7 +46,10 @@ botonesColor.forEach(function(boton) {
         cambiarColor(boton.dataset.color);
     });
 });
-
+//funcion aleatoria para arrays
+function elegirAleatorio(array) {
+    return array[Math.floor(Math.random() * array.length)];
+}
 
 function cambiarColor(color){
    texto.style.color = color;
@@ -135,13 +138,13 @@ const tamanoArray = [
 //función que genera una palabra aleatoria de la lista de frases con un color y tamaño de fuente aleatorio
 function generaPalabra(){
 
-    let rand = Math.floor(Math.random() * frases.length);
-    frase.textContent = frases[rand];
+    let rand = elegirAleatorio(frases) ;
+    frase.textContent = rand;
     //funciones que generan al azar el color y tamaño de fuente de la palabra generada
-    let colorRand = Math.floor(Math.random()*coloresArray.length);
-    let tamanoRand = Math.floor(Math.random()*tamanoArray.length);
-    frase.style.color= coloresArray[colorRand];
-    frase.style.fontSize= tamanoArray[tamanoRand];
+    let colorRand = elegirAleatorio(coloresArray) ;
+    let tamanoRand = elegirAleatorio(tamanoArray);
+    frase.style.color= colorRand;
+    frase.style.fontSize= tamanoRand;
     
     
 }
@@ -165,7 +168,7 @@ function checkear(){
     if (texto.value.trim() === frase.textContent && frase.style.color === texto.style.color && frase.style.fontSize === texto.style.fontSize) {
         punt++;
         puntuacion.textContent = punt;
-        let mensajeRandom=textoMensaje[Math.floor(Math.random() * textoMensaje.length)];
+        let mensajeRandom=elegirAleatorio(textoMensaje);
         mensaje.textContent = mensajeRandom;
         document.body.appendChild(mensaje);
 
