@@ -1,3 +1,4 @@
+//conjunto de frases que se mostrarán en el juego
 const frases = [
     "Inicio",
     "Camino",
@@ -44,7 +45,7 @@ document.getElementById("black").onclick = negro;
 document.getElementById("green").onclick= verde;
 
 
-
+//cambian el color del texto
 function negro(){
     cambiarColor("rgb(0, 0, 0)");
 }
@@ -69,7 +70,7 @@ function cambiarColor(color){
     
 }
 
-
+//modo oscuro al pulsar "d" fuera del área de texto
 document.addEventListener("keydown", function(event) {
     if (event.key === "d" && document.activeElement !== texto) {
         document.body.classList.toggle("dark-mode");
@@ -77,7 +78,7 @@ document.addEventListener("keydown", function(event) {
     
 });
 
-
+//cambian el tamaño del texto
 document.getElementById("small").onclick = pequeño;
 document.getElementById("large").onclick = grande;
 document.getElementById("medium").onclick = mediano;
@@ -106,6 +107,7 @@ const puntuacion = document.getElementById("puntos");
 let punt = 0;
 let t = 50;
 
+//inicia el juego, resetea la puntuación y el tiempo,permite escribir en el área de texto y genera la primera palabra aleatoria 
 function inicio(){
     mensaje.textContent = "";
     punt = 0;
@@ -118,7 +120,7 @@ function inicio(){
     texto.value= "";
 
     generaPalabra();
-
+    //inicia el temporizador
     let intervalo = setInterval(() => {
         t--;
         tiempo.textContent = t;
@@ -126,7 +128,7 @@ function inicio(){
         if(t ==0){
             clearInterval(intervalo);
             texto.disabled = true;
-
+            //alerta con la puntuación final al terminar el tiempo
             alert(`Puntuación final: ${punt}`);
         }
     },1000);
@@ -146,13 +148,14 @@ const tamanoArray = [
     "32px"
 ];
 
+//función que genera una palabra aleatoria de la lista de frases con un color y tamaño de fuente aleatorio
 function generaPalabra(){
 
     document.body.appendChild(mensaje);
 
     let rand = Math.floor(Math.random() * frases.length);
     frase.textContent = frases[rand];
-
+    //funciones que generan al azar el color y tamaño de fuente de la palabra generada
     let colorRand = Math.floor(Math.random()*coloresArray.length);
     let tamanoRand = Math.floor(Math.random()*tamanoArray.length);
     frase.style.color= coloresArray[colorRand];
@@ -165,6 +168,8 @@ texto.addEventListener("input", checkear);
 
 const mensaje = document.createElement("p");
 
+
+//mensajes si se acierta la palabra, color y tamaño de fuente
 const textoMensaje = [
     "Correcto",
     "Genial",
@@ -173,7 +178,7 @@ const textoMensaje = [
     "¡Sigue así!",
 ];
 
-
+//función que comprueba si el texto ingresado coincide con la frase mostrada, el color y tamaño de fuente
 function checkear(){
     if (texto.value.trim() === frase.textContent && frase.style.color == texto.style.color && frase.style.fontSize == texto.style.fontSize) {
         punt++;
