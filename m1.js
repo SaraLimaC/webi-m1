@@ -86,6 +86,7 @@ const mensaje = document.createElement("p");
 
 let punt = 0;
 let t = 50;
+let intervalo;
 
 //inicia el juego, resetea la puntuación y el tiempo,permite escribir en el área de texto y genera la primera palabra aleatoria 
 function inicio(){
@@ -101,11 +102,11 @@ function inicio(){
 
     generaPalabra();
     //inicia el temporizador
-    let intervalo = setInterval(() => {
+    intervalo = setInterval(() => {
         t--;
         tiempo.textContent = t;
 
-        if(t ==0){
+        if(t === 0){
             mensaje.textContent = "";
             clearInterval(intervalo);
             texto.disabled = true;
@@ -159,7 +160,7 @@ const textoMensaje = [
 
 //función que comprueba si el texto ingresado coincide con la frase mostrada, el color y tamaño de fuente
 function checkear(){
-    if (texto.value.trim() === frase.textContent && frase.style.color == texto.style.color && frase.style.fontSize == texto.style.fontSize) {
+    if (texto.value.trim() === frase.textContent && frase.style.color === texto.style.color && frase.style.fontSize === texto.style.fontSize) {
         punt++;
         puntuacion.textContent = punt;
         let mensajeRandom=textoMensaje[Math.floor(Math.random() * textoMensaje.length)];
