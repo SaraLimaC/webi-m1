@@ -1,4 +1,4 @@
-let frases = [
+const frases = [
     "Inicio",
     "Camino",
     "Horizonte",
@@ -133,14 +133,14 @@ function inicio(){
 }
 
 
-let coloresArray = [
+´const coloresArray = [
     "rgb(255, 0, 0)",   
     "rgb(0, 0, 0)",     
     "rgb(0, 128, 0)",   
     "rgb(0, 0, 255)"    
 ];
 
-let tamanoArray = [
+const tamanoArray = [
     "16px",
     "24px",
     "32px"
@@ -158,12 +158,16 @@ function generaPalabra(){
     
 }
 
-texto.addEventListener("input", checkear());
+texto.addEventListener("input", checkear);
 
 function checkear(){
-    if (texto.value.trim() === frase.textContent && frase.style.color==texto.style.color && frase.style.fontSize==texto.style.fontSize ) {
+    if (texto.value.trim() === frase.textContent && frase.style.color == texto.style.color && frase.style.fontSize == texto.style.fontSize) {
         punt++;
-        puntuacion.textContent= punt;
+        puntuacion.textContent = punt;
+
+        let mensaje = document.createElement("p");
+        mensaje.textContent = "¡Correcto!";
+        document.body.appendChild(mensaje);
 
         texto.value = "";
         generaPalabra();
