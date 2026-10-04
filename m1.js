@@ -31,9 +31,9 @@ const frases = [
     "Próximo horizonte"
 ];
 
-let texto = document.getElementById("texto");
+const texto = document.getElementById("texto");
 
-let frase = document.getElementById("frase");
+const frase = document.getElementById("frase");
 
 document.getElementById("red").onclick = rojo;
 
@@ -100,14 +100,16 @@ function tamano(tamano){
 
 document.getElementById("iniciar").onclick = inicio;
 
-let tiempo = document.getElementById("tiempo");
-let puntuacion = document.getElementById("puntos");
+const tiempo = document.getElementById("tiempo");
+const puntuacion = document.getElementById("puntos");
 
-const punt = 0;
-const t = 50;
+let punt = 0;
+let t = 50;
 
 function inicio(){
 
+    punt = 0;
+    t = 50;
     texto.disabled = false;
 
     puntuacion.textContent = punt;
@@ -145,6 +147,10 @@ const tamanoArray = [
 ];
 
 function generaPalabra(){
+
+    mensaje.textContent = " ";
+    document.body.appendChild(mensaje);
+
     let rand = Math.floor(Math.random() * frases.length);
     frase.textContent = frases[rand];
 
@@ -158,12 +164,13 @@ function generaPalabra(){
 
 texto.addEventListener("input", checkear);
 
+const mensaje = document.createElement("p");
+
 function checkear(){
     if (texto.value.trim() === frase.textContent && frase.style.color == texto.style.color && frase.style.fontSize == texto.style.fontSize) {
         punt++;
         puntuacion.textContent = punt;
 
-        let mensaje = document.createElement("p");
         mensaje.textContent = "¡Correcto!";
         document.body.appendChild(mensaje);
 
