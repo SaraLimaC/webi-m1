@@ -103,8 +103,8 @@ document.getElementById("iniciar").onclick = inicio;
 let tiempo = document.getElementById("tiempo");
 let puntuacion = document.getElementById("puntos");
 
-let punt;
-let t;
+const punt;
+const t;
 
 function inicio(){
     punt=0;
@@ -127,7 +127,7 @@ function inicio(){
             clearInterval(intervalo);
             texto.disabled = true;
 
-            alert("Puntuación final: " + punt);
+            alert(`Puntuación final: ${punt}`);
         }
     },1000);
 }
