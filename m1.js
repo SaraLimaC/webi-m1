@@ -107,7 +107,7 @@ let punt = 0;
 let t = 50;
 
 function inicio(){
-
+    mensaje.textContent = "";
     punt = 0;
     t = 50;
     texto.disabled = false;
@@ -148,7 +148,6 @@ const tamanoArray = [
 
 function generaPalabra(){
 
-    mensaje.textContent = " ";
     document.body.appendChild(mensaje);
 
     let rand = Math.floor(Math.random() * frases.length);
@@ -166,12 +165,21 @@ texto.addEventListener("input", checkear);
 
 const mensaje = document.createElement("p");
 
+const textoMensaje = [
+    "Correcto",
+    "Genial",
+    "Increíble",
+    "¡Bien hecho!",
+    "¡Sigue así!",
+];
+
+
 function checkear(){
     if (texto.value.trim() === frase.textContent && frase.style.color == texto.style.color && frase.style.fontSize == texto.style.fontSize) {
         punt++;
         puntuacion.textContent = punt;
-
-        mensaje.textContent = "¡Correcto!";
+        let mensajeRandom=textoMensaje[Math.floor(Math.random() * textoMensaje.length)];
+        mensaje.textContent = mensajeRandom;
         document.body.appendChild(mensaje);
 
         texto.value = "";
