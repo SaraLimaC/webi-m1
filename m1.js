@@ -50,7 +50,7 @@ botonesColor.forEach(function(boton) {
 
 function cambiarColor(color){
    texto.style.color = color;
-   checkear()
+   checkear();
     
 }
 
@@ -74,7 +74,7 @@ botonesTamano.forEach(function(boton) {
 
 function tamano(tamanoElegido){
     texto.style.fontSize = tamanoElegido;
-    checkear()
+    checkear();
 }
 
 document.getElementById("iniciar").onclick = inicio;
@@ -104,10 +104,11 @@ function inicio(){
         tiempo.textContent = t;
 
         if(t ==0){
+            mensaje.textContent = "";
             clearInterval(intervalo);
             texto.disabled = true;
             //alerta con la puntuación final al terminar el tiempo
-            alert(`Puntuación final: ${punt}`);
+            alert("¡Se acabó el tiempo!\nHas conseguido " + punt + " puntos.");
         }
     },1000);
 }
