@@ -82,6 +82,8 @@ document.getElementById("iniciar").onclick = inicio;
 const tiempo = document.getElementById("tiempo");
 const puntuacion = document.getElementById("puntos");
 
+const mensaje = document.createElement("p");
+
 let punt = 0;
 let t = 50;
 
@@ -108,7 +110,7 @@ function inicio(){
             clearInterval(intervalo);
             texto.disabled = true;
             //alerta con la puntuación final al terminar el tiempo
-            alert("¡Se acabó el tiempo!\nHas conseguido " + punt + " puntos.");
+            alert(`¡Se acabó el tiempo!\nHas conseguido ${punt} puntos.`);
         }
     },1000);
 }
@@ -143,7 +145,7 @@ function generaPalabra(){
 
 texto.addEventListener("input", checkear);
 
-const mensaje = document.createElement("p");
+
 
 
 //mensajes si se acierta la palabra, color y tamaño de fuente
