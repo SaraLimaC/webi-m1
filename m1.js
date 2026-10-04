@@ -41,10 +41,10 @@ const frase = document.getElementById("frase");
 const botonesColor = document.querySelectorAll("[data-color]");
 
 botonesColor.forEach(function(boton) {
-    boton.onclick = function() {
+     boton.addEventListener("click", function() {
         //llama a la función cambiarColor para que lo cambie
         cambiarColor(boton.dataset.color);
-    };
+    });
 });
 
 
@@ -66,10 +66,10 @@ document.addEventListener("keydown", function(event) {
 const botonesTamano = document.querySelectorAll("[data-size]");
 
 botonesTamano.forEach(function(boton) {
-    boton.onclick = function() {
+    boton.addEventListener("click", function() {
         //llama a la función tamano para que lo cambie
         tamano(boton.dataset.size);
-    };
+    });
 });
 
 function tamano(tamanoElegido){
@@ -77,7 +77,7 @@ function tamano(tamanoElegido){
     checkear();
 }
 
-document.getElementById("iniciar").onclick = inicio;
+document.getElementById("iniciar").addEventListener("click", inicio);
 
 const tiempo = document.getElementById("tiempo");
 const puntuacion = document.getElementById("puntos");
@@ -94,6 +94,8 @@ function inicio(){
     punt = 0;
     t = 50;
     texto.disabled = false;
+
+    clearInterval(intervalo);
 
     puntuacion.textContent = punt;
     tiempo.textContent = t;
