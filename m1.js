@@ -36,32 +36,16 @@ const texto = document.getElementById("texto");
 
 const frase = document.getElementById("frase");
 
-document.getElementById("red").onclick = rojo;
 
-document.getElementById("blue").onclick = azul;
+//cambia el color del texto
+const botonesColor = document.querySelectorAll("[data-color]");
 
-document.getElementById("black").onclick = negro;
-
-document.getElementById("green").onclick= verde;
-
-
-//cambian el color del texto
-function negro(){
-    cambiarColor("rgb(0, 0, 0)");
-}
-
-function rojo(){
-   cambiarColor("rgb(255, 0, 0)");
-}
-
-function azul(){
-    cambiarColor("rgb(0, 0, 255)");
-}
-
-function verde(){
-    cambiarColor("rgb(0, 128, 0)");
-
-}
+botonesColor.forEach(function(boton) {
+    boton.onclick = function() {
+        //llama a la función cambiarColor para que lo cambie
+        cambiarColor(boton.dataset.color);
+    };
+});
 
 
 function cambiarColor(color){
@@ -78,24 +62,18 @@ document.addEventListener("keydown", function(event) {
     
 });
 
-//cambian el tamaño del texto
-document.getElementById("small").onclick = pequeño;
-document.getElementById("large").onclick = grande;
-document.getElementById("medium").onclick = mediano;
+//cambia el tamaño del texto usando data-size en los botones
+const botonesTamano = document.querySelectorAll("[data-size]");
 
-function pequeño(){
-    tamano("16px");
-}
-function grande(){
-    tamano ("32px");
-}
-function mediano(){
-   tamano ("24px");
-}
+botonesTamano.forEach(function(boton) {
+    boton.onclick = function() {
+        //llama a la función tamano para que lo cambie
+        tamano(boton.dataset.size);
+    };
+});
 
-
-function tamano(tamano){
-    texto.style.fontSize = tamano;
+function tamano(tamanoElegido){
+    texto.style.fontSize = tamanoElegido;
     checkear()
 }
 

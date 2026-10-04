@@ -26,28 +26,27 @@ button {
     margin: 30px;
 }
 
-button:hover {
-    background-color: white;
+#black:hover,
+#red:hover,
+#blue:hover,
+#green:hover {
+    color: white;
 }
 
 #black:hover {
     background-color: black;
-    color: white;
 }
 
 #red:hover {
     background-color: red;
-    color: white;
 }
 
 #blue:hover {
     background-color: blue;
-    color: white;
 }
 
 #green:hover {
     background-color: green;
-    color: white;
 }
 
 article {

@@ -13,9 +13,9 @@ Tecla secreta: pulsa "d" fuera del area de texto para el modo nocturno.
 ## Uso de IA
 Usé Gemini para añadir el área de texto para escribir. También le pedi ayuda para las funciones de los botones, para poder manejar el texto según la función de cada botón.
 
-Usé ChatGPT para completar el bonus, el modo oscuro, además de pedir ayuda porque no conseguía que los botones de los colores funcionaran y me recomendó usar ids.
+Usé ChatGPT para completar el bonus, el modo oscuro, también para acceder al color y tamaño de los botones con data-color y data-size en el HTML y pude utilizar una única función para los colores en lugar de tener cuatro funciones diferentes para cada botón.
 
-Para ambos resultados copie el código y en el caso de los botones solo modifique los colores dentro de las funciones y sus nombres.
+Para el primer resultado no modifiqué nada salvó la condición para que la "d" no generará el modo oscuro si estaba en el área de texto. Para el segundo resultado adapté los valores de color y tamaño dentro del HTML para que coincidieran con los que utilizaba mi juego y añadí la función que recibí, encargada de obtener esos valores mediante dataset.
 
 Después le pedí que me indicara cómo generar un número aleatorio para seleccionar una posición de un array al azar y la forma de comparar el resultado de la palabra al azar y la que estaba escribiendo en el momento.
 
