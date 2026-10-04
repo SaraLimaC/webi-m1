@@ -129,8 +129,6 @@ const tamanoArray = [
 //función que genera una palabra aleatoria de la lista de frases con un color y tamaño de fuente aleatorio
 function generaPalabra(){
 
-    document.body.appendChild(mensaje);
-
     let rand = Math.floor(Math.random() * frases.length);
     frase.textContent = frases[rand];
     //funciones que generan al azar el color y tamaño de fuente de la palabra generada
