@@ -23,6 +23,7 @@ button {
 
 .botones {
     display: inline;
+    margin: 30px;
 }
 
 button:hover {
@@ -53,9 +54,9 @@ article {
     display: inline-block;
 }
 
- #divisores {
+ .divisores {
     display: flex;
-    padding: 10px 20px;
+    margin: 30px;
 }
 
 p {
